@@ -31,7 +31,6 @@ const SearchBox = () => {
             placeholder="Search"
           />
         </div>
-        {JSON.stringify(inputText)}
       </div>
     </>
   );
