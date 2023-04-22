@@ -1,17 +1,19 @@
 .container {
-    background-color: #EFEFEF;
+    background-color: #FFFFFF;
     width: 100vw;
     height: 100vh;
     padding: 20px;
 }
 
 .searchContainer {
-    background-color: yellowgreen;
     width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .bodyOfTheContent {

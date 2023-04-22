@@ -1,0 +1,18 @@
+.SearchBContainer {
+    height: 100%;
+    width: 50%;
+}
+
+.searchIcon {
+    color: #313131;
+    width: 5%;
+}
+
+.innerDiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+}

@@ -1,4 +1,5 @@
 import "./App.css";
+import SearchBox from "./components/searchbox";
 
 // --> app component
 const App = () => {
@@ -6,7 +7,7 @@ const App = () => {
     <>
       <div className="container">
         <div className="searchContainer">
-          <p>searchBox section</p>
+          <SearchBox />
         </div>
         <div className="bodyOfTheContent">
           <div className="leftSection">01</div>
