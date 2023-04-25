@@ -17,9 +17,10 @@
 }
 
 .bodyOfTheContent {
-    background-color: powderblue;
     width: 100%;
     display: flex;
+    height: 100%;
+    padding: 10px;
 }
 
 .disclaimerContainer {
@@ -29,16 +30,24 @@
 
 .leftSection {
     background-color: bisque;
-    width: 80%;
+    width: 77%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+
 }
 
 .rightSection {
-    background-color: burlywood;
-    width: 20%;
+    background-color: orange;
+    width: 23%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    height: 100%;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 5px;
 }
