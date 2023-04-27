@@ -1,22 +1,45 @@
 // --> video list component
 const VideoList = (props) => {
-  const { videosResponse, emptyHeading } = props;
+  const { videosResponse, receiveHandler } = props;
 
-  const count = videosResponse.length;
-  let heading = emptyHeading;
-
-  if (count > 0) {
-    const noun = count > 1 ? "Videos" : "Video";
-    heading = count + " " + noun;
-  }
-
-  console.log('---------------response---------------',videosResponse);
+  console.log(videosResponse);
+  const handleChange = (id) => {
+    receiveHandler(id);
+  };
   return (
     <>
-      <h2>{heading}</h2>
-      {[videosResponse].map((video) => (
-        <p key={video.id}> {video.title} </p>
-      ))}
+      {videosResponse?.items?.map((value, i) => {
+        return (
+          <div
+            key={i}
+            onClick={() => handleChange(value.id)}
+            style={{
+              marginBottom: 10,
+              marginTop: 10,
+              cursor: "pointer",
+              display: "flex",
+              justifyContent:'center'
+            }}
+          >
+            <div>
+              <img
+                src={value.bestThumbnail?.url}
+                alt={"thumbnail"}
+                height={100}
+                width={100}
+              />
+            </div>
+            <div>
+              <p style={{ fontWeight: "bold" }}>{value.title}</p>
+              <p>{value.author?.name}</p>
+              <div>
+                <p>views: {value.views}</p>
+                <p>uploadedAt: {value.uploadedAt}</p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </>
   );
 };

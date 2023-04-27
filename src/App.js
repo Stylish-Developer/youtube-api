@@ -8,17 +8,20 @@ import { SearchedVideos } from "./utils/ApiCall";
 const App = () => {
   const [inputText, setInputText] = useState("");
   const [videosResponse, setVideosResponse] = useState([]);
+  const [id, setId] = useState("");
 
   const handleChange = (e) => {
     setInputText(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const videosData = SearchedVideos(inputText);
-    setTimeout(() => {
-      setVideosResponse(videosData);
-    }, 1000);
+    const videosData = await SearchedVideos(inputText);
+    setVideosResponse(videosData);
+  };
+
+  const receiveHandler = (value) => {
+    setId(value);
   };
 
   return (
@@ -27,17 +30,24 @@ const App = () => {
         <div className="searchContainer">
           <SearchBox
             inputText={inputText}
-            setInputText={setInputText}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
         </div>
         <div className="bodyOfTheContent">
-          <div className="leftSection">01</div>
+          <div className="leftSection">
+            <iframe
+              width={"80%"}
+              height="400"
+              src={`https://www.youtube.com/embed/${id}`}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          </div>
           <div className="rightSection">
             <VideoList
               videosResponse={videosResponse}
-              emptyHeading={`No matches for “${inputText}”`}
+              receiveHandler={receiveHandler}
             />
           </div>
         </div>
@@ -45,8 +55,6 @@ const App = () => {
           <p>disclaimer section</p>
         </div>
       </div>
-
-      <h2>{inputText}</h2>
     </>
   );
 };

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Input } from "../ui/input";
 
 import SearchSvg from "../../assets/svg/search-outline.svg";
@@ -7,7 +6,7 @@ import "../../assets/css/searchB.css";
 
 // --> search component
 const SearchBox = (props) => {
-  const { inputText, setInputText, handleChange, handleSubmit } = props;
+  const { inputText, handleChange, handleSubmit } = props;
 
   return (
     <>

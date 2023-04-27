@@ -1,4 +1,3 @@
-
 import { axiosInstance } from "./BaseURL";
 
 // --> api call for common
