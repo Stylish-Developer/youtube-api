@@ -12,7 +12,7 @@ export const SearchedVideos = async (value) => {
     url: `/youtube-search/?q=${value}`,
     headers,
   })
-    .then((res) => res.data.items)
+    .then((res) => res.data)
     .catch((err) => {
       if (err.response) {
         //the server responded with a status code other than 200 range
